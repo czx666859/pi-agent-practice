@@ -152,8 +152,6 @@ pi
 - 用途：创建、编辑和分析 `.pptx` 演示文稿，包括用 `pptxgenjs` 脚本创建新文稿、通过 unzip 编辑 `ppt/slides/slideN.xml` 再 zip 回去、用 `markitdown` 提取文本和用 `scripts/thumbnail.py` 生成缩略图网格，并附带设计规范、内容／文件／视觉三层 QA 检查和图像转换工具
 - 所在目录：`E:\git2\pi-test\.pi\skills\pptx\SKILL.md`，脚本路径都相对这个目录解析
 
-这个目录就是我修正后的位置，说明回复指向的是本次安装位置。
-
 ![调用 /skill:pptx](images/S8b-skill-pptx.png)
 
 ## 8. 问题与解决
@@ -163,7 +161,6 @@ pi
 - **输入 `@` 没有文件候选列表**：见 4A。我先后发出 `@`、`@hello`，模型回复无法处理；最后用完整的 `@hello.py` 并由模型读取文件完成了解释。
 - **Pi 找不到 Git Bash**：模型尝试执行 `ls`、`find` 时提示 No bash，搜索了 `C:\Program Files\Git\bin\bash.exe` 和 `C:\Program Files (x86)\Git\bin\bash.exe`。这是因为我安装时跳过了便携版 Git Bash。读取文件靠 `read` 工具完成，没有受影响；【待补】后续是否处理了该问题。
 - **插件 fetch 被 SSRF 防护拦截**：见第 6 节，改用 `search` 工具完成试用。
-- **AI 把 Skill 装到了错误的文件夹**：见 7.1。AI 创建的是 `pi\skills\pptx` 而不是 `.pi\skills\pptx`。我用 `dir -Force` 确认后手动移动，重启 Pi 后在 `[Skills]` 里确认已发现。这件事让我意识到，AI 说"装好了"不能直接相信，要自己检查路径。
 
 ## 9. 总结
 
