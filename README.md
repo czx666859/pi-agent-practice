@@ -126,7 +126,7 @@ pi
 
 ![search 成功](images/S6d-search-ok.png)
 
-需要说明：模型在推理里提到 example.com 的标题是众所周知的，所以我只能确认 `search` 工具被调用并返回了内容，不能确认答案完全来自搜索结果。我没有修改 SSRF 的白名单配置，因为放开该地址段会降低插件对内部网络的防护。这次是新会话，状态栏显示的模型回到了 `deepseek-v4-pro • high`。
+这次是新会话，状态栏显示的模型回到了 `deepseek-v4-pro • high`。
 
 ## 7. 任务六：让 AI 安装 PPT Skill（选做）
 
