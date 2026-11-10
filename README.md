@@ -158,7 +158,6 @@ pi
 
 - **安装便携版 Git 时被 GitHub 限流**：第一次运行安装器，Git Bash 方式选了默认的 `y`，报 `API rate limit exceeded`。原因是匿名请求 GitHub 接口的次数在当前网络出口上用完。我重新运行安装器，在 Git Bash 一项选择了 `n`（跳过），Pi 本身安装成功。
 - **启动时 fd、ripgrep 下载失败**：首次启动出现 `HTTP 504` 警告，不影响启动和聊天。后来重新启动 Pi 时这两个工具成功安装到 `C:\Users\HP\.pi\agent\bin\`。
-- **输入 `@` 没有文件候选列表**：见 4A。我先后发出 `@`、`@hello`，模型回复无法处理；最后用完整的 `@hello.py` 并由模型读取文件完成了解释。
 - **Pi 找不到 Git Bash**：模型尝试执行 `ls`、`find` 时提示 No bash，搜索了 `C:\Program Files\Git\bin\bash.exe` 和 `C:\Program Files (x86)\Git\bin\bash.exe`。这是因为我安装时跳过了便携版 Git Bash。读取文件靠 `read` 工具完成，没有受影响；【待补】后续是否处理了该问题。
 - **插件 fetch 被 SSRF 防护拦截**：见第 6 节，改用 `search` 工具完成试用。
 
