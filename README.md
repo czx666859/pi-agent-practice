@@ -162,7 +162,6 @@ pi
 - **启动时 fd、ripgrep 下载失败**：首次启动出现 `HTTP 504` 警告，不影响启动和聊天。后来重新启动 Pi 时这两个工具成功安装到 `C:\Users\HP\.pi\agent\bin\`。
 - **输入 `@` 没有文件候选列表**：见 4A。我先后发出 `@`、`@hello`，模型回复无法处理；最后用完整的 `@hello.py` 并由模型读取文件完成了解释。
 - **Pi 找不到 Git Bash**：模型尝试执行 `ls`、`find` 时提示 No bash，搜索了 `C:\Program Files\Git\bin\bash.exe` 和 `C:\Program Files (x86)\Git\bin\bash.exe`。这是因为我安装时跳过了便携版 Git Bash。读取文件靠 `read` 工具完成，没有受影响；【待补】后续是否处理了该问题。
-- **图片粘贴的结果不稳定**：见 5B。粘贴文件路径和粘贴剪贴板图像两种方式，模型给出了不一致的描述。
 - **插件 fetch 被 SSRF 防护拦截**：见第 6 节，改用 `search` 工具完成试用。
 - **AI 把 Skill 装到了错误的文件夹**：见 7.1。AI 创建的是 `pi\skills\pptx` 而不是 `.pi\skills\pptx`。我用 `dir -Force` 确认后手动移动，重启 Pi 后在 `[Skills]` 里确认已发现。这件事让我意识到，AI 说"装好了"不能直接相信，要自己检查路径。
 
