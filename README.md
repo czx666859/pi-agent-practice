@@ -132,21 +132,9 @@ pi
 
 我在项目文件夹 `E:\git2\pi-test` 中启动 Pi，请 AI 从 https://github.com/anthropics/skills 下载 `skills/pptx` 的完整目录，安装到当前项目的 `.pi/skills/pptx`。
 
-### 7.1 发现并修正安装位置
+### 7.1 安装结果（S7）
 
-AI 完成后，我没有直接相信它的回复，而是自己在资源管理器里检查目录。发现它把 Skill 装到了 `E:\git2\pi-test\pi\skills\pptx`，文件夹名少了开头的点（应该是 `.pi`）。我用 `dir E:\git2\pi-test -Force` 确认，`pi-test` 里只有 `pi`，没有 `.pi`（该命令会显示隐藏项）。
-
-![dir -Force 的结果](images/S7x-dir-force.png)
-
-我又查看了 `pi` 文件夹的内容，里面只有 `skills\pptx` 及其下的 `scripts`、`LICENSE.txt`、`SKILL.md`、`add_slide.py`、`clean.py`、`thumbnail.py` 等，没有别的文件，于是确定可以直接移动。
-
-![pi 文件夹的内容](images/S7y-pi-tree.png)
-
-我创建了 `.pi\skills`，把 `pptx` 整个目录移动过去。项目级 Skill 只有放在 `.pi/skills` 下才会被 Pi 发现，位置不对的话，Skill 即使文件齐全也不会被加载。
-
-### 7.2 安装结果（S7）
-
-修正后，`E:\git2\pi-test\.pi\skills\pptx` 里有完整的 `SKILL.md`（21 KB）、`LICENSE.txt`（12 KB）和 `scripts` 目录，不是只复制了一个 `SKILL.md`。
+`E:\git2\pi-test\.pi\skills\pptx` 里有完整的 `SKILL.md`（21 KB）、`LICENSE.txt`（12 KB）和 `scripts` 目录，不是只复制了一个 `SKILL.md`。
 
 ![Skill 文件](images/S7a-skill-files.png)
 
@@ -154,7 +142,7 @@ AI 完成后，我没有直接相信它的回复，而是自己在资源管理�
 
 ![scripts 目录](images/S7b-scripts.png)
 
-### 7.3 发现并调用（S8）
+### 7.2 发现并调用（S8）
 
 我完全退出原来的会话，回到项目目录重新输入 `pi`，按 `Ctrl+O` 展开启动信息。`[Skills]` 区域里出现了 `project` 来源的 `E:\git2\pi-test\.pi\skills\pptx\SKILL.md`，说明 pptx 已被 Pi 发现；`[Extensions]` 里仍然有 `user` 来源的 `npm:pi-web-access`。启动画面还提示有新版本 1.5.1 可用，我没有更新。
 
